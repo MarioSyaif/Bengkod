@@ -46,7 +46,11 @@
                 </div>
                 @endif
 
-                {{ $slot }}
+                {{-- Support untuk Blade Components (existing) --}}
+                {{ $slot ?? '' }}
+                
+                {{-- Support untuk Blade Layouts (@extends) --}}
+                @yield('content')
 
             </div>
 
